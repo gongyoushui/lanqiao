@@ -1,0 +1,98 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormComponent( "javax.swing.JLabel" ) {
+			name: "label1"
+			"text": "  我的位置 :"
+			"font": &Font0 new java.awt.Font( "微软雅黑", 1, 14 )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 175, 100 )
+			"size": new java.awt.Dimension( 80, 30 )
+		} )
+		add( new FormComponent( "javax.swing.JLabel" ) {
+			name: "label2"
+			"text": "  终      点 :"
+			"font": #Font0
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 180, 165 )
+			"size": new java.awt.Dimension( 75, 30 )
+		} )
+		add( new FormComponent( "javax.swing.JTextField" ) {
+			name: "textField1"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 265, 105 )
+			"size": new java.awt.Dimension( 210, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextField" ) {
+			name: "textField2"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 265, 165 )
+			"size": new java.awt.Dimension( 210, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JButton" ) {
+			name: "button1"
+			"text": "路     线"
+			"font": new java.awt.Font( "微软雅黑", 1, 16 )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 145, 20 )
+			"size": new java.awt.Dimension( 430, 33 )
+		} )
+		add( new FormComponent( "javax.swing.JButton" ) {
+			name: "button2"
+			"text": "搜索"
+			"font": new java.awt.Font( "微软雅黑", 0, 16 )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 490, 115 )
+			"size": new java.awt.Dimension( 65, 70 )
+		} )
+		add( new FormComponent( "javax.swing.JLabel" ) {
+			name: "label3"
+			"text": "  推荐路线 :"
+			"font": new java.awt.Font( "微软雅黑", 1, 14 )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 175, 225 )
+			"size": new java.awt.Dimension( 85, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextArea" ) {
+			name: "textArea1"
+			"text": "路线一(最短时间):"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 180, 270 )
+			"size": new java.awt.Dimension( 110, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextField" ) {
+			name: "textField3"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 205, 295 )
+			"size": new java.awt.Dimension( 325, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextArea" ) {
+			name: "textArea2"
+			"text": "路线二(最省钱):"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 180, 325 )
+			"size": new java.awt.Dimension( 110, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextField" ) {
+			name: "textField4"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 205, 350 )
+			"size": new java.awt.Dimension( 325, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextArea" ) {
+			name: "textArea3"
+			"text": "路线二(性价比最高):"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 180, 380 )
+			"size": new java.awt.Dimension( 125, 25 )
+		} )
+		add( new FormComponent( "javax.swing.JTextField" ) {
+			name: "textField5"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 205, 405 )
+			"size": new java.awt.Dimension( 325, 25 )
+		} )
+	}
+}

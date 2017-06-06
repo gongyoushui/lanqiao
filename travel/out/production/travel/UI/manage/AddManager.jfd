@@ -1,0 +1,36 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space ::49:x, par l {comp label1::t:p:88:p, comp label2::t:p:88:p}, space :::p, par l {par t:::p {comp textField2::::205:x, comp textField1::::205:x}, comp button1:::p:111:p}, space :p:36:p}}"
+			"$verticalGroup": "par l {seq l {space :p:71:p, par b {comp textField1::b:p::p, comp label1::b:::x}, space :p:51:p, par b {comp textField2::b:p::p, comp label2::b:p:25:p}, space :p:33:p, comp button1:::p::p, space :p:26:p}}"
+		} ) {
+			name: "this"
+			addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "thisPropertyChange", true, "save" ) )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "管理员名称："
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "密码："
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "保存"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

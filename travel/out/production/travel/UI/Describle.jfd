@@ -1,0 +1,105 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :::p, comp layeredPane1:::p:459:p}, seq l {space :p:59:p, comp textField4:::p:129:p}}, space s:::p, par l:::p {comp textField5:::p::p, comp textField6:::p::p, comp textField7::l:p::p, comp textField8::l:p::p, comp scrollPane2::::203:x, comp scrollPane5::l::203:x, comp scrollPane4::l::203:x, comp scrollPane3::l::203:x, comp scrollPane1::l::203:x}, space ::68:x}, seq l {space :p:55:p, comp button1:::p:111:p, space :p:128:p, comp button2:::p:112:p, space ::170:x, comp button3:::p:88:p, space :p:90:p}}"
+			"$verticalGroup": "par l {seq {space :p:27:p, par b {comp textField4::b:p::p, comp textField5::b:p::p}, space :::p, par l {seq {comp scrollPane1:::p:34:p, space :p:35:p, comp textField6:::p::p, space s:::p, comp scrollPane2:::p:31:p, space :::p, comp scrollPane3:::p:30:p, space :::p, comp textField7:::p::p, space :::p, comp scrollPane4:::p::p, space :p:18:p, comp textField8:::p::p, space u:::p, comp scrollPane5:::p::p}, comp layeredPane1:::p:448:p}, space u:::p, par l {comp button1:::p::p, par b {comp button2::b:p::p, comp button3::b:p::p}}, space ::33:x}}"
+		} ) {
+			name: "this"
+			"font": new java.awt.Font( "方正姚体", 0, 12 )
+			"focusableWindowState": false
+			"focusable": false
+			add( new FormContainer( "javax.swing.JLayeredPane", new FormLayoutManager( class javax.swing.JLayeredPane ) ) {
+				name: "layeredPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :::p, comp label1:::p:459:p, space ::10:x}}"
+					"$verticalGroup": "par l {seq l {comp label1:::p:414:p, space :0:31:x}}"
+				} ) {
+					name: "panel1"
+					"foreground": new java.awt.Color( 255, 255, 255, 0 )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "text"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/pic/1.jpg" )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"x": 0
+					"y": 0
+					"width": 475
+					"height": 445
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea1"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+				"text": "景点详情:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+				"text": "景点名:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6"
+				"text": "景点介绍:"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea2"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField7"
+				"text": "景点位置:"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane3"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea3"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane4"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea4"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField8"
+				"text": "总评分:"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane5"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea5"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "到这去"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "收藏"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "返回"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button3ActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 20 )
+			"size": new java.awt.Dimension( 770, 620 )
+		} )
+	}
+}

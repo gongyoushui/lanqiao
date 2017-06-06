@@ -1,0 +1,26 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:16:p, par l {seq {comp label1:::p:100:p, space :0:302:x}, comp scrollPane1::::402:x}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:24:p, comp label1:::p:29:p, space :p:26:p, comp scrollPane1:::p:130:p, space ::205:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "收藏信息:"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 40, 10 )
+			"size": new java.awt.Dimension( 440, 450 )
+		} )
+	}
+}

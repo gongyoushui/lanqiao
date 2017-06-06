@@ -1,0 +1,57 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:14:p, comp label2:::p:95:p}, seq l {space :::p, comp layeredPane1:::p:377:p, space :p:42:p, par l {comp scrollPane2:::p:116:p, comp scrollPane1:::p:116:p, comp scrollPane3::l:p:116:p}}}, space ::93:x}}"
+			"$verticalGroup": "par l {seq l {space :p:19:p, comp label2:::p::p, space u:::p, par l {comp layeredPane1:::p:340:p, seq {comp scrollPane1:::p:31:p, space :p:45:p, comp scrollPane2:::p:31:p, space :p:35:p, comp scrollPane3:::p:30:p}}, space ::71:x}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JLayeredPane", new FormLayoutManager( class javax.swing.JLayeredPane ) ) {
+				name: "layeredPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :::p, comp label1::::368:x, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp label1::::339:x}}"
+				} ) {
+					name: "panel1"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "text"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/pic/4.jpg" )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"x": 0
+					"y": 0
+					"width": 380
+					"height": 345
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "美食详情:"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea1"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea2"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane3"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea3"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 650, 495 )
+		} )
+	}
+}
