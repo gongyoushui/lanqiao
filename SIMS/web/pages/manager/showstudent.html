@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="jquery,ui,easy,easyui,web">
+	<meta name="description" content="easyui help you build your web page easily!">
+	<title>showtudent</title>
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="http://www.jeasyui.net/Public/js/easyui/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="../css/mana_1.css" />
+</head>
+<body>
+	<h1>showStudent</h1>
+
+	<table id="tt" class="easyui-datagrid" style="width:800px;height:500px"
+       url="data/datagrid_data.json"
+       title="学生列表" iconCls="icon-search"
+       toolbar="#tb">
+		<thead>
+			<tr>
+				<th field="itemid" width="40" align="center"></th>
+				<th field="productid" width="80" align="center">序号</th>
+				<th field="listprice" width="80" align="center">姓名</th>
+				<th field="unitcost" width="80" align="center">学号</th>
+				<th field="attr1" width="150" align="center">性别</th>
+				<th field="status1" width="60" align="center">班级</th>
+				<th field="status2" width="60" align="center">年級</th>
+				<th field="status3" width="60" align="center">电话</th>
+				<th field="status4" width="60" align="center">QQ</th>
+				<th field="status5" width="150" align="center">邮箱</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td field="itemid" width="40" align="center"><input type="checkbox"></td>
+				<td field="productid" width="80" align="center">1</td>
+				<td field="listprice" width="80" align="center">张三 </td>
+				<td field="listprice" width="80" align="center">123345</td>
+				<td field="attr1" width="150" align="center">男</td>
+				<td field="status1" width="60" align="center">123</td>
+				<td field="status2" width="60" align="center">123</td>
+				<td field="status3" width="60" align="center">123</td>
+				<td field="status4" width="60" align="center">123</td>
+				<td field="attr12" width="150" align="center">123</td>
+			</tr>
+		</tbody>   
+	</table>
+	<div id="tb">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:alert('Add')">添加</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true" onclick="javascript:alert('Cut')">刪除</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="javascript:alert('Edit')">修改</a>
+	</div>  
+</body>
+</html>

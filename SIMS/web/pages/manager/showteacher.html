@@ -1,0 +1,106 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="jquery,ui,easy,easyui,web">
+	<meta name="description" content="easyui help you build your web page easily!">
+	<title>showteacher</title>
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="http://www.jeasyui.net/Public/js/easyui/jquery.easyui.min.js"></script>
+	<script src="../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#show").click(function(){
+  				$("#addTeacher").show();ss
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="../css/manage.css"
+</head>
+<body >
+<div id="showTeacher">
+	<h1>showStudent</h1>
+	<table id="tt" class="easyui-datagrid" style="width:800px;height:500px"
+       url="data/datagrid_data.json"
+       title="教師列表" iconCls="icon-search"
+       toolbar="#tb">
+		<thead>
+			<tr>
+				<th field="itemid" width="40" align="center"></th>
+				<th field="productid" width="50" align="center">序号</th>
+				<th field="listprice" width="80" align="center">工號</th>
+				<th field="unitcost" width="80" align="center">姓名</th>
+				<th field="attr1" width="50" align="center">性別</th>
+				<th field="status1" width="60" align="center">電話</th>
+				<th field="status2" width="60" align="center">郵箱</th>
+				<th field="status3" width="150" align="center">備註</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td field="itemid" width="40" align="center"><input type="checkbox"></td>
+				<td field="productid" width="50" align="center">1</td>
+				<td field="listprice" width="80" align="center">张三 </td>
+				<td field="listprice" width="80" align="center">123345</td>
+				<td field="attr1" width="50" align="center">男</td>
+				<td field="status1" width="60" align="center">123</td>
+				<td field="status2" width="60" align="center">123</td>
+				<td field="status3" width="150" align="center">123</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="tb">
+		<a href="" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">添加</a>
+        <a href="" class="easyui-linkbutton" iconCls="icon-cut" plain="true" onclick="javascript:alert('Cut')">刪除</a>
+        <a href="" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="javascript:alert('Edit')">修改</a>
+	</div>
+</div>
+ <div id="addTeacher" style="display: none;">
+	<div id="dlg" class="easyui-dialog" style="width:700px;height:330px;padding:10px 30px;"
+			title="添加教師" buttons="#dlg-buttons" iconCls="icon-add">
+			
+		<form id="ff" method="post">
+			<table>
+				<tr>
+					<td>姓名:</td>
+					<td><input type="text" name="name" style="width:150px;"/></td>
+				</tr>
+				<tr>
+					<td>工號:</td>
+					<td><input type="text" name="code" style="width:150px;"/></td>
+				</tr>
+				<tr>
+					<td>性別:</td>
+					<td>
+						<select name="sex" style="width:45px;">
+							<option value="1">男</option>
+							<option value="2">女</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>電話:</td>
+					<td><input type="text" name="phone" style="width:150px;"/></td>
+				</tr>
+				<tr>
+					<td>郵箱:</td>
+					<td><input type="text" name="qq" style="width:150px;"/></td>
+				</tr>
+				<tr>
+					<td>课程</td>
+					<td><input type="text" style="width:150px;"/></td>
+					<td><input type="text" style="width:150px;"/></td>
+					<td><input type="text" style="width:150px;"/></td>
+					<td><a href="#" class="easyui-linkbutton" iconCls="icon-remove"></a></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" onclick="savereg()">设置课程</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="savereg()">提交</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+</div>	
+</body>
+</html>
