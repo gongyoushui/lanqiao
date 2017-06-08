@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="jquery,ui,easy,easyui,web">
+	<meta name="description" content="easyui help you build your web page easily!">
+	<title>addlesson</title>
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://www.jeasyui.net/Public/js/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		function savereg(){
+			$('#ff').form('submit',{
+				url:'form2_proc.php',
+				success:function(data){
+					$.messager.alert('Info', data, 'info');
+				}
+			});
+		}
+	</script>
+	<style>
+		#d1{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div id="dlg" class="easyui-dialog" style="width:400px;height:200px;padding:10px 30px;"
+			title="設置課程" buttons="#dlg-buttons" iconCls="icon-add">
+		<form id="ff" method="post">
+			<table>
+				<tr>
+					<td>年級:</td>
+					<td>
+						<select name="sex" style="width:175px;">
+							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>班級:</td>
+					<td>
+						<select name="sex" style="width:175px;">
+						
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>課程:</td>
+					<td>
+						<select name="sex" style="width:175px;">
+						
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="savereg()">提交</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+</body>
+</html>

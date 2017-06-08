@@ -6,6 +6,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
+
 public class DbHelper {
 
 /**
@@ -122,9 +124,7 @@ public class DbHelper {
              * 1、判断数据库的连接状态，如果没有连接则连接数据库，先获得数据库的连接
              * 2、执行预处理的sql语句对象，PreparedStatement，有可能该sql有相关的参数
              * 3、判断是否有参数，如果有则进行参数的绑定
-             * 4、执行sql语句，获得返回的执行结果，会是int返回数据中受影响的行数
-             * 5、执行资源的回收
-             *
+             * 4、执行资源的回收
              */
 
             try {
@@ -156,6 +156,68 @@ public class DbHelper {
             return result;
         }
 
+    /**
+     * 该方法执行数据库多表数据的添加，删除，和修改的操作
+     * @param sqls  执行的sql语句列表，也就是结构化查询语句
+     * @param params  执行sql语句有可能用到的参数的集合
+     * @param paramNum  每条sql语句有可能用到的参数的个数
+     * @return int[]
+     */
+    public static int executeSave(ArrayList<String> sqls, ArrayList<Object> params, int[] paramNum) throws SQLException {
+        int result  = 0;
+
+        /**
+         * 1、判断数据库的连接状态，如果没有连接则连接数据库，先获得数据库的连接
+         * 2、这里设置为事务，执行多个sql语句
+         * 3、提交事务
+         * 4、执行资源的回收
+         */
+
+        try {
+            //1、判断数据库的连接状态，如果没有连接则连接数据库，先获得数据库的连接
+            if(null == connection || connection.isClosed()){
+                getConnction();
+            }
+            //2、这里设置为事务，执行多个sql语句，最后提交
+            connection.setAutoCommit(false); //设置成手动提交事务
+            int p = 0; //用来计算param的位置
+            for(int i=0; i<sqls.size(); i++){
+                pstmt = connection.prepareStatement(sqls.get(i));
+                //3、判断是否有参数，如果有则进行参数的绑定
+                if(paramNum[i]!=0){ //此处sql语句是否有参数
+                    for(int j=0; j<paramNum[i]; j++){
+                        pstmt.setObject(j+1, params.get(p));
+                        pstmt.execute();
+                        System.out.println("一条插入语句");
+                    }
+                }
+                p += paramNum[i];
+            }
+            try { //隔1秒执行一条sql语句
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            //3、提交事务
+            connection.commit();
+            result = pstmt.executeUpdate();
+            if(result==0) connection.rollback();//某一条数据添加失败时，回滚
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                connection.commit();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }finally{
+
+            connection.setAutoCommit(true);
+            //4、执行资源的回收
+            closeAll();
+        }
+        return result;
+    }
 
 
         public static void closeAll() {

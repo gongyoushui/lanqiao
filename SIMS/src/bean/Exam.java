@@ -12,16 +12,46 @@ public class Exam {
     private String time;
     private String type;
     private Integer lesson_id;
+    private String exam_grade;
+    private String exam_class;
+    private String exam_tips;
 
     public Exam() {
     }
 
-    public Exam(Integer exam_id, String exam_name, String time, String type, Integer lesson_id) {
+    public Exam(Integer exam_id, String exam_name, String time, String type, Integer lesson_id, String exam_grade, String exam_class, String exam_tips) {
         this.exam_id = exam_id;
         this.exam_name = exam_name;
         this.time = time;
         this.type = type;
         this.lesson_id = lesson_id;
+        this.exam_grade = exam_grade;
+        this.exam_class = exam_class;
+        this.exam_tips = exam_tips;
+    }
+
+    public String getExam_grade() {
+        return exam_grade;
+    }
+
+    public void setExam_grade(String exam_grade) {
+        this.exam_grade = exam_grade;
+    }
+
+    public String getExam_class() {
+        return exam_class;
+    }
+
+    public void setExam_class(String exam_class) {
+        this.exam_class = exam_class;
+    }
+
+    public String getExam_tips() {
+        return exam_tips;
+    }
+
+    public void setExam_tips(String exam_tips) {
+        this.exam_tips = exam_tips;
     }
 
     public Integer getExam_id() {

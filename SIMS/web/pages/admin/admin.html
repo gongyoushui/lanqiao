@@ -2,9 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="keywords" content="jquery,ui,easy,easyui,web">
-	<meta name="description" content="easyui help you build your web page easily!">
-	<title>jQuery EasyUI Demo</title>
+	<title>admin</title>
 	<link rel="stylesheet" type="text/css" href="../css/easyui.css">
 	<link rel="stylesheet" type="text/css" href="../css/icon.css">
 	<style>
@@ -15,49 +13,74 @@
 	</style>
 	<script type="text/javascript" src="../js/jquery-1.6.1.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript">
 		var identity = 3;   //用来判断身份  1.manager 2.teacher 3.student(默认为3，等待传值)
 		var menuUrl = "";  //链接的页面
-		function showmenu(identity){
+		function showMenuWelcome(identity){
 			if (identity==1) {  //管理员
-				
+
 			}else if(identity==2){  //老师
-				
+
 			}else if(identity==3){  //学生
-				$("#menu").load('teacherMenu.html');
+				$("#welcome").load('../manager/notice.html');
 			}
-			window.onload=showmenu;
+			var pages = $("#pages");
+			pages.hidden();
+			window.onload=showMenuWelcome;
 		}
+        //点击连接
+        $(function(){
+            $("a[href='#pages']").click(function(){
+            	var $model=$("#pages").detach();
+                var $new=$model.clone(true);
+                $new.attr("title",$(this).text());
+                $new.children().attr("src",$(this).getAttribute("src"));
+                $("#welcome").before($new);
+                vat newTable = $new;
+                $new.show();
+        });
 	</script>
 </head>
-<body style="background-color: #e3ebfe; width: 1800px;">
+<body style="background-color: #e3ebfe; width: 1800px;" onload="showMenuWelcome(3)">
 	<!--页头 -->
     <div style="background-color:#90a4c1; height:30px; width:100%;">
-    		<h4  style="color: white; margin-left: 10px; float: left; padding-right: 5px;">学生信息管理系统</h3>
+    		<h4  style="color: white; margin-left: 10px; float: left; padding-right: 5px;">学生信息管理系统</h4>
 		<div style="float: right; color: white; font-size: 15px; margin-right: 10px;"><p  style="float: left; padding-right: 5px;">您好</p> <a href="/foot.html" style="float: left; color: white; padding-right: 5px;" >安全退出</a></div>
 		<!--登陆位置--><div style="color: red; font-size: 13px; float: right;">试一下</div>
     </div>
     <!--主要部分-->
 	<div class="easyui-layout" style="width:1800px;height:800px;">
-		 <!--菜单-->
+		<!--菜单-->
 		<div id="menu" region="west" split="true" title="导航菜单" style="width:180px;" >
+			<div class="easyui-accordion" style="width:179PX;height:100%;">
+				<div title="教学管理 " style="overflow:auto;padding:10px; ">
+					<p class="menus"><a href="#pages">成绩查询</a></p>
+				</div>
+				<div title="班级信息"style="overflow:auto;padding:10px; ">
+					<p class="menus" ><a href="#pages ">班级通讯录</a></p>
+				</div>
+				<div title="系统管理" style="overflow:auto;padding:10px; ">
+					<p class="menus" ><a href="#pages ">个人信息</a></p>
+				</div>
+			</div>
 		</div>
 		<!--页面-->
 		<div id="content"  class="easyui-tabs"  region="center" style="width:1600px;height:800px; padding: 0; ">
-			<div title="First Tab">
-				<iframe src="tableDemo.html " style="width: 1600px; height: 770px;border: none;" onload="showmenu(3)"></iframe>
+			<!--欢迎页面-->
+			<div id="welcome" title="欢迎页面">
+				<!--<iframe id="welcome" src="../manager/notice.html " style="width: 1600px; height: 770px;border: none;"></iframe>-->
 			</div>
-			<div title="Second Tab" closable="true">
-				Second Tab
-			</div>
-			<div title="Third Tab" iconCls="icon-reload" closable="true">
-				Third Tab
+			<!--其它页面-->
+			<div id="pages" closable="true" title="">
+				<iframe src="" style="height: 100%; width: 100%; border: none;" scrolling="no" ></iframe>
 			</div>
 		</div>
-	    <!--页脚-->
-	    <div  style="background-color:#dde8f6; height:20px; width: 1800px;float: left; border-top: 1px solid lightcoral;color:#485b9b;">
-	    		<h6 style="margin: auto;width: 20px;">@sims</h6>
-	    </div>
-	</body>
+		<!--页脚-->
+		<div style="background-color:#dde8f6; height:20px; width: 1800px;float: left; border-top: 1px solid lightcoral;color:#485b9b;">
+			<h6 style="margin: auto;width: 20px;">@sims</h6>
+		</div>
+	</div>
+</body>
 </html>
