@@ -9,22 +9,53 @@
 		*{
 			padding: 0;
 			margin: 0;
+			float: left;
+		}
+		#menu #p{
+			height: 25px;
+			width: 145px;
+			margin: 5px;
+		}
+		#menu p:hover{
+			background-color: #e3ebfe;
+			border: 1px solid #9fb7e5;
+		}
+		#menu p:visited{
+			background-color: #e3ebfe;
+			border: 1px solid #9fb7e5;
+		}
+		#menu a{
+			margin: 5px 20px;
+		}
+		#menu a:link{
+			color: black;
+			text-decoration: none;
+		}
+		#menu a:hover{
+			color: darkblue;
+			text-decoration: underline;
+		}
+		#menu a:visited{
+			color: darkblue;
+			text-decoration: none;
 		}
 	</style>
 	<script type="text/javascript" src="../js/jquery-1.6.1.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript">
-		var identity = 3;   //用来判断身份  1.manager 2.teacher 3.student(默认为3，等待传值)
-		var menuUrl = "";  //链接的页面
+		var identity = 2;   //用来判断身份  1.manager 2.teacher 3.student(默认为3，等待传值)
+		//确定欢迎页和菜单
 		function showMenuWelcome(identity){
+		    alert("welcome!");
 			if (identity==1) {  //管理员
-
+                $("#managerMenu").css('display','block');
 			}else if(identity==2){  //老师
-
+                $("#teacherMenu").css('display','block');
+                $("#welcome").load('../teacher/welcome.html');
 			}else if(identity==3){  //学生
-				$("#welcome").load('../manager/notice.html');
+                $("#studentMenu").css('display','block');
 			}
 			var pages = $("#pages");
 			pages.hidden();
@@ -32,55 +63,58 @@
 		}
         //点击连接
         $(function(){
-            $("a[href='#pages']").click(function(){
-            	var $model=$("#pages").detach();
+            $("a[class='menus']").click(function(){
+                $("#welcome").load(alert("menu"));
+                //复制模版
+                var $model=$("#pages").detach();
                 var $new=$model.clone(true);
-                $new.attr("title",$(this).text());
-                $new.children().attr("src",$(this).getAttribute("src"));
-                $("#welcome").before($new);
-                vat newTable = $new;
-                $new.show();
+				$new.insertAfter("#welcome");
+				$new.load(this.attr(name));
+            });
         });
 	</script>
 </head>
-<body style="background-color: #e3ebfe; width: 1800px;" onload="showMenuWelcome(3)">
+<body style="background-color: #e3ebfe; width: 1800px;" onload="showMenuWelcome(2)">
 	<!--页头 -->
     <div style="background-color:#90a4c1; height:30px; width:100%;">
-    		<h4  style="color: white; margin-left: 10px; float: left; padding-right: 5px;">学生信息管理系统</h4>
-		<div style="float: right; color: white; font-size: 15px; margin-right: 10px;"><p  style="float: left; padding-right: 5px;">您好</p> <a href="/foot.html" style="float: left; color: white; padding-right: 5px;" >安全退出</a></div>
+		<h4  style="color: white; margin-left: 10px; float: left; padding-right: 5px;">学生信息管理系统</h4>
+		<div style="float: right; color: white; font-size: 15px; margin-right: 10px;"><p  style="float: left; padding-right: 5px;">您好</p> <a href="#" style="float: left; color: white; padding-right: 5px;" >安全退出</a></div>
 		<!--登陆位置--><div style="color: red; font-size: 13px; float: right;">试一下</div>
     </div>
     <!--主要部分-->
 	<div class="easyui-layout" style="width:1800px;height:800px;">
 		<!--菜单-->
 		<div id="menu" region="west" split="true" title="导航菜单" style="width:180px;" >
-			<div class="easyui-accordion" style="width:179PX;height:100%;">
+			<!--管理员菜单-->
+			<div id="managerMenu" class="easyui-accordion" style="width:179PX;height:100%; position:relative; z-index: 9999; display: none"></div>
+			<!--教师菜单-->
+			<div id="teacherMenu" class="easyui-accordion" style="width:179PX;height:100%; position:relative; z-index: 9999; display: none">
 				<div title="教学管理 " style="overflow:auto;padding:10px; ">
-					<p class="menus"><a href="#pages">成绩查询</a></p>
+					<p class="menus"><a class="menus" target="pages" href="welcome.html">成绩查询</a></p>
 				</div>
 				<div title="班级信息"style="overflow:auto;padding:10px; ">
-					<p class="menus" ><a href="#pages ">班级通讯录</a></p>
+					<p class="menus" ><a class="menus" href="#">班级通讯录</a></p>
 				</div>
 				<div title="系统管理" style="overflow:auto;padding:10px; ">
-					<p class="menus" ><a href="#pages ">个人信息</a></p>
+					<p class="menus" ><a class="menus" href="#">个人信息</a></p>
 				</div>
 			</div>
+			<!--学生菜单-->
+			<div id="studentMenu" class="easyui-accordion" style="width:179PX;height:100%; position:relative; z-index: 9999; display: none"></div>
 		</div>
 		<!--页面-->
 		<div id="content"  class="easyui-tabs"  region="center" style="width:1600px;height:800px; padding: 0; ">
 			<!--欢迎页面-->
-			<div id="welcome" title="欢迎页面">
-				<!--<iframe id="welcome" src="../manager/notice.html " style="width: 1600px; height: 770px;border: none;"></iframe>-->
-			</div>
+			<div id="welcome" title="欢迎页面"></div>
 			<!--其它页面-->
-			<div id="pages" closable="true" title="">
-				<iframe src="" style="height: 100%; width: 100%; border: none;" scrolling="no" ></iframe>
+			<div closable="true" title="">
+				<iframe  id="pages" name="pages" style="height: 100%; width: 100%;border:none;" scrolling="no"></iframe>
 			</div>
 		</div>
-		<!--页脚-->
-		<div style="background-color:#dde8f6; height:20px; width: 1800px;float: left; border-top: 1px solid lightcoral;color:#485b9b;">
-			<h6 style="margin: auto;width: 20px;">@sims</h6>
-		</div>
+	</div>
+	<!--页脚-->
+	<div style="background-color:#dde8f6; height:20px; width: 1800px;float: left; border-top: 1px solid lightcoral;color:#485b9b;">
+		<h6 style="margin: auto;width: 20px;">@sims</h6>
 	</div>
 </body>
 </html>
