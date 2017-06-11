@@ -22,7 +22,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/jstl-1.2.jar!/" />
+          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/操作excel/jxl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -31,7 +31,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/mysql-connector-java-5.1.25.jar!/" />
+          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/mysql/jstl-1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -40,7 +40,16 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/standard-1.1.2.jar!/" />
+          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/mysql/mysql-connector-java-5.1.25.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/qingdaoUni/蓝桥杯/SIMS/项目所需包/mysql/standard-1.1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

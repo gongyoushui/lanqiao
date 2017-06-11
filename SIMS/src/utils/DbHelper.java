@@ -9,24 +9,13 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class DbHelper {
-
-/**
- * Created by Administrator on 2017/6/7.
- */
-
-
-
-
         /**
          * 常见错误
          * 1、在ResultSet迭代的时候，没有用<=导致没有获得当前数据行的列的最后的一列数据，
          *    这个错误会导致，在获取之以后给实体bean对象赋值的时候抛出空指针异常
          * 2、pstmt.setObject(i + 1, params.get(i));正确的
          *   pstmt.setObject(i, params.get(i));错误的写法没有把数据参数的索引从1开始
-         *
-         *
          */
-
         // 连接数据库
         private static Connection connection;
         // 执行带预处理的sql语句
@@ -39,15 +28,11 @@ public class DbHelper {
 
         private static String dbname = "root";
         private static String dbpwd = "root";
-
         /**
-         *
          * 获得数据库的连接的方法
-         *
          * @return
          */
         public static Connection getConnction() {
-
             // 获得驱动连接数据库
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -58,10 +43,8 @@ public class DbHelper {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
             return connection;
         }
-
         /**
          * 执行查询的通用方法
          * @param sql
@@ -101,16 +84,13 @@ public class DbHelper {
                         resultArrayList.add(rowHashtable);
                     }
                 }
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }finally{
                 closeAll();
             }
-
             return resultArrayList;
         }
-
         /**
          * 该方法执行数据库数据的添加，删除，和修改的操作
          * @param sql  执行的T-SQL 语句，也就是结构化查询语句
@@ -119,14 +99,12 @@ public class DbHelper {
          */
         public static int executeSave(String sql, ArrayList<Object> params){
             int result  = 0;
-
             /**
              * 1、判断数据库的连接状态，如果没有连接则连接数据库，先获得数据库的连接
              * 2、执行预处理的sql语句对象，PreparedStatement，有可能该sql有相关的参数
              * 3、判断是否有参数，如果有则进行参数的绑定
              * 4、执行资源的回收
              */
-
             try {
                 //1、判断数据库的连接状态，如果没有连接则连接数据库，先获得数据库的连接
                 if(null == connection || connection.isClosed()){
